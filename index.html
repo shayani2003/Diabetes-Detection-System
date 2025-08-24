@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Detection - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Diabetes Detection</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="check.html">Check Diabetes</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Bringing The Future Of Healthcare</h1>
+    <p>Your health, our priority. Get insights and early detection for diabetes.</p>
+    <button class="btn glass-btn" id="appointmentBtn">Make An Appointment</button>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card glass-card">
+      <h3>Emergency Cases</h3>
+      <p>24/7 emergency support for all critical situations.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <h3>Easy Appointment</h3>
+      <p>Book your appointments in just a few clicks.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <h3>Qualified Doctors</h3>
+      <p>Expert and professional doctors at your service.</p>
+    </div>
+  </section>
+
+
+  <!-- Appointment Form Modal -->
+<div id="appointmentModal" class="modal">
+  <div class="modal-content glass-card">
+    <span class="close">&times;</span>
+    <h2>Book an Appointment</h2>
+    <form id="appointmentForm" class="form-section">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" required>
+      </div>
+
+      <div class="form-group">
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" required>
+          <option value="">-- Select --</option>
+          <option value="Dr. Sharma">Dr. Sharma</option>
+          <option value="Dr. Roy">Dr. Roy</option>
+          <option value="Dr. Singh">Dr. Singh</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn glass-btn">Confirm Appointment</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- Diabetes Awareness Section -->
+<section class="awareness">
+  <h2>Diabetes Awareness</h2>
+  <div class="awareness-cards">
+    <div class="awareness-card glass-card">
+      <h3>What is Diabetes?</h3>
+      <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Glucose is your body’s main source of energy. Your body can make glucose, but glucose also comes from the food you eat.
+
+Insulin is a hormone made by the pancreas that helps glucose get into your cells to be used for energy. If you have diabetes, your body doesn’t make enough—or any—insulin, or doesn’t use insulin properly. Glucose then stays in your blood and doesn’t reach your cells.
+
+Diabetes raises the risk for damage to the eyes, kidneys, nerves, and heart. Diabetes is also linked to some types of cancer. Taking steps to prevent or manage diabetes may lower your risk of developing diabetes health problems.</p>
+      
+
+    </div>
+    
+    <div class="awareness-card glass-card">
+      <h3>Prevention Tips</h3>
+      <p>Diabetes is one of the most common health issues in today’s world, but the good news is that it can often be prevented or delayed through simple lifestyle changes. Prevention is always better than treatment because once diabetes develops, it usually requires lifelong management. Some key steps to prevent diabetes include:</p>
+      <ul>
+        <li>Healthy Eating: Choose fresh vegetables, fruits, whole grains, and foods low in sugar and unhealthy fats. Avoid junk food and sugary drinks.</li>
+        <li>Regular Exercise: Staying active for at least 30 minutes a day helps the body use insulin better and maintain a healthy weight.</li>
+        <li>Maintain Healthy Weight: Being overweight is one of the biggest risk factors for diabetes. Small, steady weight loss can make a big difference.</li>
+        <li>Avoid Smoking and Alcohol: These habits increase the risk of type 2 diabetes and other serious health problems.</li>
+        <li>Regular Check-ups: Monitoring blood sugar levels, cholesterol, and blood pressure can help detect early signs of diabetes.</li>
+      </ul>
+      <p>By following these steps, people can reduce their chances of developing diabetes and live a healthier, longer life.</p>
+    </div>
+    <div class="awareness-card glass-card">
+      <h3>Why Early Detection?</h3>
+      <p>Early detection of diabetes is very important because diabetes often develops silently, without obvious symptoms. By the time it is diagnosed, complications may have already started. Detecting diabetes early gives a person a better chance to control it and prevent serious damage.</p>
+      <ul>
+         <li>Preventing Complications: Uncontrolled diabetes can lead to heart disease, kidney failure, nerve damage, vision loss, and more. Early treatment reduces these risks.</li>
+         <li>Better Management: When detected early, diabetes can often be managed with lifestyle changes, without the need for heavy medication.</li>
+         <li>Cost-Effective: Treating diabetes early is much less expensive than treating advanced complications.</li>
+         <li>Improved Quality of Life: Early diagnosis helps people live normal, active, and healthy lives with fewer restrictions.</li>
+         <li>Awareness of Risk Factors: Detecting prediabetes (a condition before diabetes fully develops) gives people time to act and reverse the condition.</li>
+      </ul>
+      <p>In short, early detection empowers individuals to take control of their health before the disease takes control of them.</p>
+      </div>
+  </div>
+  
+</section>
+
+
+
+
+  <!-- Footer -->
+
+  <footer class="glass-footer">
+  <p>© 2025 Diabetes Detection. Designed for better healthcare.</p>
+  <p>
+    <a href="index.html">Home</a> | 
+    <a href="check.html">Check Diabetes</a> | 
+    <a href="login.html">Login</a>
+  </p>
+  <p>Contact us: <a href="mailto:support@diabetesdetection.com">support@diabetesdetection.com</a> | +91-9876543210</p>
+</footer>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
