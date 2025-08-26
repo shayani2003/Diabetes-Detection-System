@@ -93,9 +93,42 @@ nav a.active::after {
   background: rgba(255, 255, 255, 0.15);
   color: #180404;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+  border: 1px solid rgba(8, 19, 222, 0.3);
+  box-shadow: 0px 4px 20px rgba(57, 24, 203, 0.356);
+
+  position: relative;
+  overflow: hidden; /* make sure shine stays inside button */
+  z-index: 1;
 }
+
+
+.glass-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
 
 .glass-btn:hover {
   transform: scale(1.08);
@@ -320,9 +353,11 @@ nav a.active::after {
 
 /* Awareness Section */
 .awareness {
-  padding: 70px 20px;
+  /* padding: 70px 20px; */
   text-align: center;
   background: linear-gradient(135deg, #e6f7ff, #f9f9f9);
+                      
+  /* margin: 20px; */
 }
 
 .awareness h2 {
@@ -330,61 +365,166 @@ nav a.active::after {
   margin-bottom: 40px;
   color: #004080;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+  padding: 40px;
 }
 
-.awareness-cards {
-  /* display: flex; */
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.awareness-card {
-  /* flex: 1; */
-  min-width: 280px;
-  max-width: 500px;
-  padding: 25px;
-  border-radius: 15px;
+.awareness-text {
+  max-width: 900px;
+  margin: 0 50px;
   text-align: left;
-  transition: transform 0.3s ease-in-out;
+  justify-content: flex-start; 
+  align-items: flex-start;
 }
 
-.awareness-card:nth-child(1) {
-   margin-top: 0;
-   margin-left: 150px;
-}
-.awareness-card:nth-child(2) {
-   margin-top: 200px;
-   margin-left: 850px;
-}
-.awareness-card:nth-child(3) {
-   margin-top: 200px;
-   margin-left: 150px;
-}
-
-
-
-.awareness-card:hover {
-  transform: translateY(-8px);
-}
-
-
-.awareness-card h3 {
+.awareness-text h3 {
   color: #003366;
-  margin-bottom: 15px;
+  /* margin: 0 0 0; */
+  font-size: 22px;
+  text-align: left;
+  /* font-size: 30px; */
 }
 
-.awareness-card p, 
-.awareness-card ul {
-  font-size: 15px;
+.awareness-text p {
+  font-size: 20px;
+  line-height: 2.3;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.awareness-text ul {
+  margin-left: 100px;
+  margin-bottom: 20px;
   line-height: 1.6;
   color: #333;
+  font-size: 20px;
 }
 
-.awareness-card ul {
-  list-style: disc;
-  margin-left: 20px;
+.text-video-block {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  gap: 20px;
+  /* margin: 20px 30px; */
+
+  
+
+  /* max-width: 900px; */
+  margin: 0 50px;
+  text-align: left;
+  justify-content: flex-start; 
+  align-items: flex-start;
 }
+
+.text-part h3 {
+  flex: 2;
+
+  color: #003366;
+  /* margin: 0 0 0; */
+  /* font-size: 22px; */
+  text-align: left;
+  font-size: 30px;
+
+  
+  
+}
+.text-part p{
+  font-size: 20px;
+  line-height: 2.0;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+
+}
+
+.video-part {
+  flex: 1;
+  text-align: right;
+  float: right;
+  /* margin: 10px 10px 0 0; top, right, bottom, left spacing */
+  border-radius: 8px; 
+ 
+}
+
+
+
+/* Text + Video block layout */
+.text-video-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* space between text and video */
+  margin-bottom: 30px;
+}
+
+/* Text part should take remaining space */
+.text-video-block .text-part {
+  flex: 2;
+}
+
+/* Video part aligned right */
+.text-video-block .video-part {
+  flex: 1;
+}
+
+.text-video-block .video-part video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive: On smaller screens, stack video under text */
+@media (max-width: 768px) {
+  .text-video-block {
+    flex-direction: column;
+  }
+
+  .text-video-block .video-part {
+    margin-top: 15px;
+    align-self: center;
+  }
+}
+.text-video-block .text {
+  flex: 1; /* take available space */
+}
+.text-video-block .video {
+  flex-shrink: 0; /* video stays fixed size */
+}
+
+.image1{
+  padding-left: 450px;
+}
+
+
+
+
+
+.ticker-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: rgba(8, 87, 165, 0.9);
+      padding: 10px 0;
+      
+      position: relative;
+      color: white;
+      padding-top: 0;
+    }
+
+.ticker-text {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: bold;
+      padding-right: 100px; 
+    }
+
+    
+
+
+
+
+
+
+
 
 
 

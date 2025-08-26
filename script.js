@@ -60,3 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+
+gsap.to(".ticker-text", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 15,
+      ease: "linear",
+      modifiers: {
+        xPercent: gsap.utils.wrap(-100, 0) // infinite loop
+      }
+    });
